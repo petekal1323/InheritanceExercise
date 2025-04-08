@@ -8,32 +8,44 @@ namespace Inheritance
         {
             // TODO Be sure to follow best practice when creating your classes
 
-            // Create a class Animal
-            // give this class 4 members that all Animals have in common
-
-
-            // Create a class Bird
-            // give this class 4 members that are specific to Bird
-            // Set this class to inherit from your Animal Class
-
-            // Create a class Reptile
-            // give this class 4 members that are specific to Reptile
-            // Set this class to inherit from your Animal Class
-
-
-
-
             /*Create an object of your Bird class
              *  give values to your members using the object of your Bird class
              *  
              * Creatively display the class member values 
              */
 
+            var birdOne = new Bird();
+            birdOne.WingColor = "Blue";
+            birdOne.CanFly = true;
+            birdOne.WillMigrate = true;
+            birdOne.BeakLength = 5.5;
+
             /*Create an object of your Reptile class
              *  give values to your members using the object of your Reptile class
              *  
              * Creatively display the class member values 
              */
+
+            var lizardOne = new Reptile()
+            {
+                isColdBlooded = true,
+                isScaly = true,
+                habitat = "Desert",
+                canGrowTail = true
+            };
+
+            var myAnimals = new Animal[] {birdOne, lizardOne};
+            
+            foreach (var animal in myAnimals)
+            {
+                Console.WriteLine($"Animal is alive: {animal.isAlive}");
+                Console.WriteLine($"Animal Age: {animal.Age}");
+                Console.WriteLine($"Animal Leg Count: {animal.LegCount}");
+                Console.WriteLine($"Animal Land, Sea, or Air: {animal.LandSeaAir}");
+                Console.WriteLine($"");
+            }
+
+
         }
     }
 }
